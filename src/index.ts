@@ -15,6 +15,8 @@ const startServer = async () => {
     // These will be defined for both new or existing servers
     typeDefs,
     resolvers,
+    // on the request object there is a session because 
+    // of the middleware we added. 
     context: ({ req }: any) => ({ req })
   });
 
@@ -25,7 +27,10 @@ const startServer = async () => {
   app.use(
     session({
       secret: "asdjlfkaasdfkjlads",
+      // resave constantly resaves session even if it didn't change
+      // we don't want that behavior.
       resave: false,
+      // wait until we have data before assigning a user a session
       saveUninitialized: false
     })
   );
