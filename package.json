@@ -3,6 +3,7 @@
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
+      "nodemon": "^1.18.4",
       "@types/bcryptjs": "^2.4.2",
       "@types/express": "^4.16.0",
       "@types/express-session": "^1.15.11",
@@ -22,6 +23,6 @@
       "typeorm": "0.2.7"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "nodemon --exec ts-node src/index.ts"
    }
 }
